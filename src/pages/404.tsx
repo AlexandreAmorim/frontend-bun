@@ -7,7 +7,7 @@ export function NotFound() {
 			<p className="text-accent-foreground">
 				Volta para{' '}
 				<Link className="text-sky-500 dark:text-sky-400" to="/">
-					Home
+				Dashboard
 				</Link>
 				.
 			</p>

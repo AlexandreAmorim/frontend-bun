@@ -17,12 +17,12 @@ export function AppLayout() {
 					const code = error.response?.data.code
 					const message = error.response?.data.message
 
-					if (message === 'Unauthorized.') {
-						navigate('/sign-in', {
-							replace: true,
-						})
-					}
-
+          if(message === 'Unauthorized.'){
+            navigate('/sign-in', {
+              replace: true,
+            })
+          }
+					
 					if (status === 401 && code === 'UNAUTHORIZED') {
 						navigate('/sign-in', {
 							replace: true,

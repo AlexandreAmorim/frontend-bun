@@ -27,10 +27,12 @@ function getInitials(name: string): string {
 export function ProfileButton() {
 	const navigate = useNavigate()
 
-	const { data: user, isLoading: isLoadingProfile } = useQuery({
-		queryKey: ['profile'],
-		queryFn: getProfile,
-	})
+	const { data: profile, isLoading: isLoadingProfile } = useQuery({
+    queryKey: ['profile'],
+    queryFn: getProfile,
+    // biome-ignore lint/style/useNumberNamespace: <explanation>
+    staleTime: Infinity,
+  })
 
 	const { mutateAsync: signOutFn, isPending: isSigningOut } = useMutation({
 		mutationFn: signOut,
@@ -48,16 +50,16 @@ export function ProfileButton() {
 			) : (
 				<>
 					<DropdownMenuTrigger className="flex items-center gap-3 outline-none">
-						<div className="flex flex-col items-end">
-							<span className="text-sm font-medium">{user?.name}</span>
+						<div className="hidden md:flex flex-col items-end">
+							<span className="text-sm font-medium">{profile?.name}</span>
 							<span className="text-xs text-muted-foreground">
-								{user?.email}
+								{profile?.email}
 							</span>
 						</div>
 						<Avatar className="size-10">
-							{user?.role && <AvatarImage src={user.role} />}
-							{user?.name && (
-								<AvatarFallback>{getInitials(user?.name)}</AvatarFallback>
+							{profile?.role && <AvatarImage src={profile.role} />}
+							{profile?.name && (
+								<AvatarFallback>{getInitials(profile?.name)}</AvatarFallback>
 							)}
 						</Avatar>
 						<ChevronDown className="size-4 text-muted-foreground" />

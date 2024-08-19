@@ -38,15 +38,15 @@ import {
 	YAxis,
 } from 'recharts'
 
-export function Home() {
+export function Dashboard() {
 	return (
 		<div className="">
-			<Helmet title="Home" />
-			<div className="py-4">
-				<Breadcrumb className="hidden md:flex">
+			<Helmet title="Dashboard" />
+			<div className="p-4">
+				<Breadcrumb className="flex">
 					<BreadcrumbList>
 						<BreadcrumbItem>
-							<BreadcrumbPage>Home</BreadcrumbPage>
+							<BreadcrumbPage className='text-muted-foreground'>Dashboard</BreadcrumbPage>
 						</BreadcrumbItem>
 					</BreadcrumbList>
 				</Breadcrumb>

@@ -122,11 +122,11 @@ export function Profile() {
 		<div className="flex flex-col">
 			<Helmet title="Perfil" />
 			<div className="py-4">
-				<Breadcrumb className="hidden md:flex">
+				<Breadcrumb className="flex">
 					<BreadcrumbList>
 						<BreadcrumbItem>
 							<BreadcrumbLink asChild>
-								<Link to="/">Home</Link>
+								<Link to="/">Dashboard</Link>
 							</BreadcrumbLink>
 						</BreadcrumbItem>
 						<BreadcrumbSeparator />
