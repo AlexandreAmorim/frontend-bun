@@ -9,7 +9,15 @@
     <title>hórus.web</title>
   </head>
   <body>
+    <noscript>Você precisa habilitar o JavaScript para essa aplicação funcionar.</noscript>
+    <div class="preloader">
+      <div class="lds-ripple"> <div class="lds-pos"></div> <div class="lds-pos"></div> </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      remove = function(){ document.querySelector(".preloader").remove(); }
+      window.onload = remove;
+    </script>
   </body>
 </html>
